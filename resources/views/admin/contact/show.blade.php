@@ -21,7 +21,7 @@
                 <!-- /.card-header -->
                 <div class="card-body p-0">
                   <div class="mailbox-read-info">
-                    <h5>{{$mail->subject}}</h5>
+                    <h5>{{$mail->subject->name}}</h5>
                     <h6>From: {{$mail->email}}
                       <span class="mailbox-read-time float-right">15 Feb. 2015 11:03 PM</span></h6>
                   </div>

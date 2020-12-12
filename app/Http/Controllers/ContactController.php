@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Contact;
 use App\Mail\ContactMail;
+use App\Models\Subject;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -16,10 +17,11 @@ class ContactController extends Controller
      */
     public function indexWebsite()
     {
-        return view('contact.index');
+        $subjects = Subject::all();
+        return view('contact.index',compact('subjects'));
     }
     public function index(){
-        $mails = Contact::all();
+        $mails = Contact::paginate(4);
         return view('admin.contact.index',compact('mails'));
     }
     /**
@@ -44,7 +46,7 @@ class ContactController extends Controller
        $mail = new Contact;
        $mail->email = $request->email;
        $mail->text = $request->message;
-       $mail->subject = $request->subject;
+       $mail->subject_id = $request->subject;
        $mail->save();
        return redirect()->back()->with('msg','Merci de nous avoir contacté');
     }

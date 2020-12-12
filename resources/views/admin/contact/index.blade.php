@@ -18,18 +18,12 @@
             <div class="card">
                 <div class="card-header">
                   <h3 class="card-title">Emails List</h3>
+            
                   <div class="card-tools">
-                    <ul class="pagination pagination-sm float-right">
-                      <li class="page-item"><a class="page-link" href="#">«</a></li>
-                      <li class="page-item"><a class="page-link" href="#">1</a></li>
-                      <li class="page-item"><a class="page-link" href="#">2</a></li>
-                      <li class="page-item"><a class="page-link" href="#">3</a></li>
-                      <li class="page-item"><a class="page-link" href="#">»</a></li>
-                    </ul>
+                    {{ $mails->links('templates.adminlte-paginate') }}
                   </div>
                 </div>
-                <!-- /.card-header -->
-       
+                <!-- /.card-header -->       
                 <div class="card-body p-0">
                   <table class="table">
                     <thead>
@@ -44,7 +38,7 @@
                         @foreach ($mails as $mail)                            
                         <tr>
                           <td>{{$mail->id}}</td>
-                          <td>{{$mail->subject}}</td>
+                          <td>{{$mail->subject->name}}</td>
                           <td>
                             {{$mail->auteur}}
                           </td>
@@ -64,6 +58,7 @@
                 </div>
                 <!-- /.card-body -->
               </div>
+    
         </div>
     </div>
 @stop
