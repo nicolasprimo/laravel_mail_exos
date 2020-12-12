@@ -11,9 +11,13 @@
         <form action="{{route('contact.store')}}" method="POST">
             @csrf
             <div class="form-group">
-              <label for="email">Email address</label>
+              <label for="email">Email</label>
               <input type="email" class="form-control" id="email" aria-describedby="email" placeholder="Enter email" name="email">
             </div>
+            <div class="form-group">
+                <label for="sujet">Sujet</label>
+                <input type="text" class="form-control" id="sujet" aria-describedby="sujet" placeholder="Enter sujet" name="subject">
+              </div>
             <div class="form-group">
                 <label for="message">Message</label>
                 <textarea class="form-control" id="message" rows="3" name="message"></textarea>
