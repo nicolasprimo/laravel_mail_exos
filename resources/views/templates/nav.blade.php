@@ -8,10 +8,10 @@
           <a class="nav-link" href="{{route('home')}}">Home</a>
       </li>     
         <li class="nav-item active">
-            <a class="nav-link" href="{{route('contact.index')}}">Contact</a>
+            <a class="nav-link" href="{{route('contact')}}">Contact</a>
         </li>     
         <li class="nav-item active">
-            <a class="nav-link" href="{{route('administration')}}">Administration</a>
+            <a class="nav-link" href="{{route('admin')}}">Administration</a>
         </li>       
       </ul>
     </div>

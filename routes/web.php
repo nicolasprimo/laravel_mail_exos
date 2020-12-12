@@ -20,9 +20,9 @@ Route::get('/', function () {
 })->name('home');
 Auth::routes();
 
-Route::get('/administration', function() {
+Route::get('/admin', function() {
     return view('administration');
-})->name('administration')->middleware('auth');
+})->name('admin')->middleware('auth');
 
-Route::get('admin/contact',[ContactController::class,'indexAdmin']);
-Route::resource('contact', ContactController::class);
+Route::get('contact',[ContactController::class,'indexWebsite'])->name('contact');
+Route::resource('admin/contact', ContactController::class);

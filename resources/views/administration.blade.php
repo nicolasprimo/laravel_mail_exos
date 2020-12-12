@@ -13,10 +13,7 @@
                 <div class="card-body">
                     <p class="mb-0">You are logged in!</p>
                 </div>
-            </div>@extends('templates.main')
-            @section('content')
-                
-            @endsection
+            </div>
         </div>
     </div>
 @stop

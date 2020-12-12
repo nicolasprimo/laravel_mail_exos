@@ -14,11 +14,11 @@ class ContactController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function indexWebsite()
     {
         return view('contact.index');
     }
-    public function indexAdmin(){
+    public function index(){
         $mails = Contact::all();
         return view('admin.contact.index',compact('mails'));
     }
@@ -57,7 +57,8 @@ class ContactController extends Controller
      */
     public function show(Contact $contact)
     {
-        //
+        $mail = Contact::find($contact->id);
+        return view('admin.contact.show',compact('mail'));
     }
 
     /**
@@ -91,6 +92,8 @@ class ContactController extends Controller
      */
     public function destroy(Contact $contact)
     {
-        //
+        $mail = Contact::find($contact->id);
+        $mail->delete();
+        return redirect('admin/contact');
     }
 }
