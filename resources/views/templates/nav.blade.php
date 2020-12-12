@@ -14,5 +14,15 @@
             <a class="nav-link" href="{{route('admin')}}">Administration</a>
         </li>       
       </ul>
+      <form action="{{route('newsletter.store')}}" method="POST" class=" pt-1 ml-4">     
+        @csrf  
+        <div class="form-group row bg-primary p-1 rounded text-light">
+          <label for="email" class="col-sm-3 col-form-label">Newsletter</label>
+          <div class="col">
+            <input type="email" class="form-control" id="email" placeholder="Email" name="email">
+          </div>
+          <button type="submit" class="btn btn-link b-col-2 text-light">Ok</button>
+        </div>
+      </form>
     </div>
   </nav>
