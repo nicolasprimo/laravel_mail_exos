@@ -18,7 +18,10 @@ class ContactController extends Controller
     {
         return view('contact.index');
     }
-
+    public function indexAdmin(){
+        $mails = Contact::all();
+        return view('admin.contact.index',compact('mails'));
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -38,6 +41,11 @@ class ContactController extends Controller
     public function store(Request $request)
     {
        Mail::to("admin@email.com")->send(new ContactMail($request));
+       $mail = new Contact;
+       $mail->email = $request->email;
+       $mail->text = $request->message;
+       $mail->subject = $request->subject;
+       $mail->save();
        return redirect()->back()->with('msg','Merci de nous avoir contacté');
     }
 

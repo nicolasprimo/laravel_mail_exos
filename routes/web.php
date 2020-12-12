@@ -24,5 +24,5 @@ Route::get('/administration', function() {
     return view('administration');
 })->name('administration')->middleware('auth');
 
-
+Route::get('admin/contact',[ContactController::class,'indexAdmin']);
 Route::resource('contact', ContactController::class);
